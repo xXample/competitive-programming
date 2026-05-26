@@ -8,8 +8,6 @@ typedef vector<int> vi;
 typedef vector<ll> vll;
 
 #define all(x) (x).begin(), (x).end()
-#define sz(x) (int)(x).size()
-#define pb push_back
 #define F first
 #define S second
 
@@ -17,18 +15,29 @@ const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ll LINF = 1e18;
 
-void solve(ll a, ll b) {
-    cout << abs(a - b) << '\n';
+void solve() {
+    int n;
+    cin >> n;
+
+    int i = 1, j = n+1, k = n+2;
+    while (i <= n) {
+        cout << i << ' ' << j << ' ' << k << ' ';
+        ++i;
+        j += 2;
+        k += 2;
+    }
+    cout << '\n';
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    ll a, b;
-    while (cin >> a >> b) {
-        solve(a, b);
-}
+    int t = 1;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
 
     return 0;
 }
