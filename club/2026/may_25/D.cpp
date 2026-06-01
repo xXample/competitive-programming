@@ -12,6 +12,14 @@ void solve() {
     int n; 
     cin >> n;
 
+    int odd = 1;
+    cout << odd << ' ';
+
+    for (int i = 1; i < n; ++i) {
+        cout << odd * (odd + 2) << ' ';
+        odd += 2;
+    }
+    cout << '\n';
     
 }
 
