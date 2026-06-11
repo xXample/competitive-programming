@@ -18,17 +18,16 @@ const ll LINF = 1e18;
 void solve() {
     int n;
     cin >> n;
-    vector<string> board(2);
-    cin >> board[0] >> board[1];
+    string s; 
+    cin >> s;
 
-    vi dp(n+1, INF);
-    dp[0] = 0;
+    int a = 0;
     for (int i = 0; i < n; ++i) {
-        dp[i+1] = min(dp[i+1], dp[i] + (board[0][i] != board[1][i]));
-        if (i >= n-1) continue;
-        dp[i+2] = min(dp[i+2], dp[i] + (board[0][i] != board[0][i+1]) + (board[1][i] != board[1][i+1]));
+        if (s[i] == '(') a++;
+        else a--;
     }
-    cout << dp[n] << '\n';
+    if (a == 0) cout << "YES\n";
+    else cout << "NO\n";
 }
 
 int main() {

@@ -18,23 +18,16 @@ const ll LINF = 1e18;
 void solve() {
     ll n, x;
     cin >> n >> x;
-    vll lower, upper;
-    lower.reserve(n);
-    upper.reserve(n);
-
-    lower.push_back(1);
-
-    ll thing = 4;
-    while (thing <= x) {
-        lower.push_back(thing);
-        thing <<= 1;
+    vll prefix;
+    prefix.reserve(n+1);
+    prefix.push_back(0);
+    for (ll i = 1; i < n+1; ++i) {
+        prefix.push_back(prefix[i-1] ^ i);
     }
-    while (thing < n) {
-        upper.push_back(thing);
-        thing <<= 1;
-    }
+    for (auto i : prefix) cout << i << ' ';
+    cout << '\n';
 
-    cout << lower.size() * upper.size() << '\n';
+
 }
 
 int main() {

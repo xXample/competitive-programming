@@ -107,22 +107,29 @@ if __name__ == "__main__":
 
 <--------------- COPY PASTE FROM HERE (for Python) -------------------------->
 {
-	"CompProg Python": {
-		"prefix": "pybase",
-		"body": [
-			"import sys",
-			"input = sys.stdin.readline",
-			"",
-			"def solve():",
-			"\t$0",
-			"",
-			"def main():",
-			"\tt = int(input())",
-			"\tfor _ in range(t):",
-			"\t\tsolve()",
-			"",
-			"if __name__ == \"__main__\":",
-			"\tmain()",
-		]
-	}
+    "(Python) Competitive Programming Template": 
+    {
+        "prefix": "pybase",
+        "body": 
+        [
+            "import sys",
+            "",
+            "input = sys.stdin.readline",
+            "", 
+            "def ii(): return int(input())",
+            "def li(): return list(map(int, input().split()))",
+            "def si(): return input().strip()",
+            "",
+            "MOD = 10**9 + 7",
+            "",
+            "def solve():",
+            "    $0",
+            "    pass",
+            "",
+            "t = ii()",
+            "for _ in range(t):",
+            "    solve()",
+        ],
+        "description": "CP Boilerplate (Python)"
+    }
 }

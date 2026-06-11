@@ -16,19 +16,10 @@ const int INF = 1e9;
 const ll LINF = 1e18;
 
 void solve() {
-    int n;
-    cin >> n;
-    vector<string> board(2);
-    cin >> board[0] >> board[1];
-
-    vi dp(n+1, INF);
-    dp[0] = 0;
-    for (int i = 0; i < n; ++i) {
-        dp[i+1] = min(dp[i+1], dp[i] + (board[0][i] != board[1][i]));
-        if (i >= n-1) continue;
-        dp[i+2] = min(dp[i+2], dp[i] + (board[0][i] != board[0][i+1]) + (board[1][i] != board[1][i+1]));
-    }
-    cout << dp[n] << '\n';
+    int x, y;
+    cin >> x >> y;
+    if (x % 2 == 1 && y % 2 == 1) cout << "NO\n";
+    else cout << "YES\n";
 }
 
 int main() {
