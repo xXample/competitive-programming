@@ -16,14 +16,17 @@ const int INF = 1e9;
 const ll LINF = 1e18;
 
 void solve() {
-    ll t, h, u; 
-    cin >> t >> h >> u;
-    if (t <= 2*h + u) {
-        cout << 3*h + 3*u + 2*t - min(t, u) << '\n';
+    int n, x, y, z;
+    cin >> n >> x >> y >> z;
+
+    int a = (n + x + y - 1) / (x + y);
+    int b = z + (n - x*z + (x + 10*y - 1)) / (x + 10*y);
+    if (n - x*z < 0) {
+        cout << a << '\n';
     } else {
-        cout << 3*h + 2*u + 2*t + 1 << '\n';
+        cout << min(a, b) << '\n';
     }
-    return;
+    
 }
 
 int main() {
