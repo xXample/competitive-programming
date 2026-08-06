@@ -7,6 +7,10 @@ typedef pair<ll,ll> pll;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 
+#define all(x) (x).begin, (x).end()
+#define F first
+#define S second
+
 void solve() {
     
 }
@@ -66,6 +70,10 @@ int main() {
 			"typedef pair<ll,ll> pll;",
 			"typedef vector<int> vi;",
 			"typedef vector<ll> vll;",
+			"",
+			"#define all(x) (x).begin, (x).end()",
+			"#define F first",
+			"#define S second",
 			"",
 			"void solve() {",
 			"\t$0",
