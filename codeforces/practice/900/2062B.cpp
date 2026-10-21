@@ -16,18 +16,26 @@ const int INF = 1e9;
 const ll LINF = 1e18;
 
 void solve() {
-    int n; cin >> n;
-    vi a(n);
-    for (auto &i : a) cin >> i;
-    for (int i = 1; i <= (n+1)/2; ++i) {
-        if (a[i-1] >= 2*(n-i) + 1 && a[n-i-1] >= 2*(n-i) + 1) {
-            continue;
+    ll n; cin >> n;
+    vll a(n); for (auto &i : a) cin >> i;
+
+    for (ll i = 1; i <= n; ++i) {
+        if (a[i-1] <= 2*max(n-i, i-1)) {
+            cout << "NO\n";
+            return;
         }
-        cout << "NO\n";
-        return;
     }
     cout << "YES\n";
+    return;
 }
+
+/*
+Algorithm: for i = 1...n, if a[i] <= 2*max(n-i, i-1), output No. Otherwise if they all pass, accept.
+PROOF:
+The algorithm passes if for all i, a[i] > 2*max(n-i, i-1). Otherwise it fails.
+For any i, max(n-i, i-1) indicates the distaince between i and n or 1, whichever is further. 
+now, a[i] have more than 2x that distance, since it must last long enough for the trip of the pointer going forwards and back from edge to a[i]. 
+*/
 
 int main() {
     ios_base::sync_with_stdio(false);
